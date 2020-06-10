@@ -56,7 +56,7 @@
                     <small class="far fa-star text-muted"></small>
                     <small class="far fa-star text-muted"></small>
                     <small class="far fa-star text-muted"></small>
-                </div>
+                </div> 
                 <span class="text-secondary font-size-13">(0 customer review)</span>
             </a>
             <hr>
