@@ -51,7 +51,7 @@
         <div class="mb-2">
             <a class="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
                 <div class="text-warning mr-2">
-                    <small class="far fa-star text-muted"></small>
+                    <small class="far fa-star "></small>
                     <small class="far fa-star text-muted"></small>
                     <small class="far fa-star text-muted"></small>
                     <small class="far fa-star text-muted"></small>
