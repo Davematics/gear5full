@@ -16,8 +16,8 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
 
-<!-- CSS Implementing Plugins -->
-<link rel="stylesheet" href="{{asset('/user/assets/vendor/font-awesome/css/fontawesome-all.min.css')}}">
+ <!--CSS Implementing Plugins -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <link rel="stylesheet" href="{{asset('/user/assets/css/font-electro.css')}}">
 
 <link rel="stylesheet" href="{{asset('/user/assets/vendor/animate.css/animate.min.css')}}">
@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="{{asset('/user/assets/vendor/slick-carousel/slick/slick.css')}}">
 <link rel="stylesheet" href="{{asset('/user/assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}">
 
-<!-- CSS Electro Template -->
+ 
 <link rel="stylesheet" href="{{asset('/user/assets/css/theme.css')}}">
 </head>
 
@@ -2616,13 +2616,13 @@ data-hide-effect="slideOutDown">
 </a>
 <!-- End Go to Top -->
 
-<!-- JS Global Compulsory -->
+ JS Global Compulsory 
 <script src="{{asset('/user/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/popper.js/dist/umd/popper.min.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/bootstrap/bootstrap.min.js')}}"></script>
 
-<!-- JS Implementing Plugins -->
+ JS Implementing Plugins 
 <script src="{{asset('/user/assets/vendor/appear.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/jquery.countdown.min.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/hs-megamenu/src/hs.megamenu.js')}}"></script>
@@ -2634,7 +2634,7 @@ data-hide-effect="slideOutDown">
 <script src="{{asset('/user/assets/vendor/slick-carousel/slick/slick.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
 
-<!-- JS Electro -->
+ JS Electro 
 <script src="{{asset('/user/assets/js/hs.core.js')}}"></script>
 <script src="{{asset('/user/assets/js/components/hs.countdown.js')}}"></script>
 <script src="{{asset('/user/assets/js/components/hs.header.js')}}"></script>
@@ -2651,7 +2651,7 @@ data-hide-effect="slideOutDown">
 <script src="{{asset('/user/assets/js/components/hs.go-to.js')}}"></script>
 <script src="{{asset('/user/assets/js/components/hs.selectpicker.js')}}"></script>
 
-<!-- JS Plugins Init. -->
+ JS Plugins Init. 
 <script>
 $(window).on('load', function () {
 // initialization of HSMegaMenu component
