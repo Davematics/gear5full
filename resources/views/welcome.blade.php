@@ -41,17 +41,19 @@
 <div class="container">
 <div class="d-flex align-items-center">
 <div class="topbar-left">
-<a href="#" class="text-gray-110 font-size-13 hover-on-dark">Welcome to Nigeria Number One Online Multi Vendor Store</a>
+<a href="/register/vendor" class="text-gray-110 font-size-13 hover-on-dark">
+  <span class="fa fa-shopping-cart"></span>   Sell on Gear 5
+</a>
 </div>
 <div class="topbar-right ml-auto">
 <ul class="list-inline mb-0">
-<li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+{{-- <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
 <a href="/register/vendor" class="u-header-topbar__nav-link"><i class="ec ec-map-pointer mr-1"></i>vendor signup</a>
-</li>
+</li> --}}
 <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-<a href="/my-order" class="u-header-topbar__nav-link"><i class="ec ec-transport mr-1"></i> Track Your Order</a>
+<a href="/my-order" class="u-header-topbar__nav-link"><i class="fa fa-truck mr-1"></i> Track Your Order</a>
 </li>
-<li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
+{{-- <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
 <div class="d-flex align-items-center">
 <!-- Language -->
 <div class="position-relative">
@@ -74,12 +76,12 @@ data-unfold-animation-out="fadeOut">
 <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
 {{-- <a class="dropdown-item active" href="#">English</a> --}}
 {{-- <a class="dropdown-item" href="#">Deutsch</a>
-<a class="dropdown-item" href="#">Español‎</a> --}}
+<a class="dropdown-item" href="#">Español‎</a> 
 </div>
 </div>
 <!-- End Language -->
 </div>
-</li>
+</li> --
 <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
 <!-- Account Sidebar Toggle Button -->
 @guest
@@ -99,14 +101,13 @@ data-unfold-duration="500">
 
 <i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign in
 </a> --}}
-<a href="/register" class="text-dark">Register</a> |
-<a href="/login" class="text-dark">Login</a>
-@endguest
+<a href="/register" class="text-dark">| NARIA (₦)</a> 
+{{-- <a href="/login" class="text-dark">Login</a> --}}
 
-@auth
-<a href="/profile" class="text-dark"> <span class="fa fa-user"></span> Profile</a>
 
-@endauth
+{{-- <a href="/profile" class="text-dark"> <span class="fa fa-user"></span> Profile</a> --}}
+
+
 <!-- End Account Sidebar Toggle Button -->
 </li>
 </ul>
@@ -282,7 +283,8 @@ data-unfold-duration="500">
 </div>
 <!-- End Logo-offcanvas-menu -->
 <!-- Search Bar -->
-<div class="col d-none d-xl-block">
+
+<div class="col-6 d-none d-xl-block">
 <form class="js-focus-state">
 <label class="sr-only" for="searchproduct">Search</label>
 <div class="input-group">
@@ -343,11 +345,11 @@ data-unfold-animation-out="fadeOut">
 <!-- End Input -->
 </li>
 <!-- End Search -->
-<li class="col d-none d-xl-block"><a href="/" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Compare"><i class="font-size-22 ec ec-compare"></i></a></li>
-<li class="col d-none d-xl-block"><a href="/" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li>
+<li class=" d-none d-xl-block"><a href="/login" class="text-gray-90 btn btn-light" data-toggle="tooltip" data-placement="top" title="login"><i class="font-size-22 fa fa-user-circle"></i> Login</a></li>
+<li class="col d-none d-xl-block"><a href="/" class="btn btn-light text-gray-90" data-toggle="tooltip" data-placement="top" title="Help"><i class="font-size-22 fa fa-question-circle"></i> Help</a></li>
 <li class="col d-xl-none px-2 px-sm-3"><a href="/" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
 <li class="col pr-xl-0 px-2 px-sm-3 d-xl-none">
-<a href="/" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
+<a href="/" class="text-gray-90 position-relative d-flex btn btn-light" data-toggle="tooltip" data-placement="top" title="Cart">
 {{-- <i class="font-size-22 ec ec-shopping-bag"></i> --}}
 <i class="font-size-22 fas fa-shopping-cart "></i>
 
@@ -355,7 +357,7 @@ data-unfold-animation-out="fadeOut">
 <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
 </a>
 </li>
-<li class="col pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
+<li class=" pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
 <div id="basicDropdownHoverInvoker" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart"
 aria-controls="basicDropdownHover"
 aria-haspopup="true"
@@ -368,8 +370,9 @@ data-unfold-delay="300"
 data-unfold-hide-on-scroll="true"
 data-unfold-animation-in="slideInUp"
 data-unfold-animation-out="fadeOut">
-<a href="/cart">
-<i class="font-size-22 text-dark fas fa-shopping-cart "></i>
+<a href="/cart" class="btn btn-light">
+<i class="font-size-22 text-dark  fas fa-shopping-cart " style=""></i>
+Cart
 <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12 text-dark">@if(session('cart')) {{ count(session('cart')) }} @else 0    @endif</span>
 
 </a>
@@ -479,10 +482,10 @@ data-animation-out="fadeOut"
 data-position="left">
 
 <a id="basicMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">
-    <span class="fas fa-tshirt"> Fashion</span></a>
+    <span class="fas fa-tshirt" style="margin-right:-130px;"></span>Fashion</a>
 
 <!-- Nav Item - Mega Menu -->
-<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu">
+<div class="hs-mega-menu vmm-tfw u-header__sub-menu" style="min-height:100vh" aria-labelledby="basicMegaMenu">
 {{-- <div class="vmm-bg">
 <img class="img-fluid" src="../../assets/img/500X400/img1.png" alt="Image Description">
 </div> --}}
@@ -606,13 +609,13 @@ r</a></li>
 <!-- Nav Item MegaMenu -->
 <li class="nav-item hs-has-mega-menu u-header__nav-item"
 data-event="hover"
-data-position="left">
+data-position="left" >
 <a id="basicMegaMenu1" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">
-        <span class=" fas fa-tv"> Electronics</span>
+        <span class=" fas fa-tv" style="margin-right:-110px;"></span> Electronics
     </a>
 
 <!-- Nav Item - Mega Menu -->
-<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu1">
+<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu1" style="min-height:100vh" >
 {{-- <div class="vmm-bg">
 <img class="img-fluid" src="../../assets/img/500X400/img4.png" alt="Image Description">
 </div> --}}
@@ -688,12 +691,12 @@ data-position="left">
 <li class="nav-item hs-has-mega-menu u-header__nav-item"
 data-event="hover"
 data-position="left">
-<a id="basicMegaMenu2" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">
-        <span class=" fas fa-baby">  Baby Products</span>
+<a id="basicMegaMenu2" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" >
+        <span class=" fas fa-baby" style="margin-right:-90px;"></span> Baby Products
    </a>
 
 <!-- Nav Item - Mega Menu -->
-<div class="hs-mega-menu vmm-tfw u-header__sub-menu vmm-bg-extended" aria-labelledby="basicMegaMenu2">
+<div class="hs-mega-menu vmm-tfw u-header__sub-menu vmm-bg-extended" aria-labelledby="basicMegaMenu2" style="min-height:100vh" >
 {{-- <div class="vmm-bg">
 <img class="img-fluid" src="../../assets/img/500X400/img3.png" alt="Image Description">
 </div> --}}
@@ -774,11 +777,11 @@ data-event="hover"
 data-position="left">
 
 <a id="basicMegaMenu3" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="tr u-header__nav-link u-header__nav-link-ue" aria-expanded="false">
-        <span class=" fas fa-keyboard"> Computer & Accessories</span>
+        <span class=" fas fa-keyboard" style="margin-right:-20px;"> </span>Computer & Accessories
     </a>
 
 <!-- Nav Item - Mega Menu -->
-<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu3">
+<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu3" style="min-height:100vh" >
 {{-- <div class="vmm-bg">
 <img class="img-fluid" src="../../assets/img/500X400/img2.png" alt="Image Description">
 </div> --}}
@@ -848,11 +851,12 @@ data-position="left">
 data-event="hover"
 data-position="left">
 <a id="basicMegaMenu4" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">
-        <span class=" fas fa-shopping-bag"> Large Mart</span>
+        <span class=" fas fa-shopping-bag" style="margin-right:-100px;"> </span>
+        Large Mart
     </a>
 
 <!-- Nav Item - Mega Menu -->
-<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu4">
+<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu4" style="min-height:100vh" >
 {{-- <div class="vmm-bg">
 <img class="img-fluid" src="../../assets/img/500X400/img5.png" alt="Image Description">
 </div> --}}
@@ -935,11 +939,12 @@ data-event="hover"
 data-position="left">
 <a id="basicMegaMenu5" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false"> 
      
-        <span class=" fas fa-warehouse"> Home & Office</span>
+        <span class=" fas fa-warehouse" style="margin-right:-80px;"> </span>
+        Home & Office
 </a>
 
 <!-- Nav Item - Mega Menu -->
-<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu5">
+<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu5"style="min-height:100vh" >
 {{-- <div class="vmm-bg">
 <img class="img-fluid" src="../../assets/img/500X400/img6.png" alt="Image Description">
 </div> --}}
@@ -1052,11 +1057,12 @@ data-position="left">
 data-event="hover"
 data-position="left">
 <a id="basicMegaMenu3" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">
-        <span class=" fas fa-mobile">  Tablet & phone</span>
+        <span class=" fas fa-mobile" style="margin-right:-80px;"> </span>
+        Tablet & phone
     </a>
 
 <!-- Nav Item - Mega Menu -->
-<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu3">
+<div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu3" style="min-height:100vh" >
 {{-- <div class="vmm-bg">
 <img class="img-fluid" src="../../assets/img/500X400/img7.png" alt="Image Description">
 </div> --}}
@@ -1144,7 +1150,8 @@ data-animation-out="fadeOut"
 data-position="left">
 <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="homeSubMenu">
 
-        <span class=" fas fa-futbol"> Sporting Products</span>
+        <span class=" fas fa-futbol" style="margin-right:-60px;"> </span>
+        Sporting Products
 </a>
 
 <!-- Home - Submenu -->
@@ -1207,10 +1214,10 @@ data-event="click"
 data-animation-in="slideInUp"
 data-animation-out="fadeOut"
 data-position="left">
-<a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle text-sale" href="javascript:;" aria-haspopup="true" aria-expanded="false">Super Deals</a>
+{{-- <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle text-sale" href="javascript:;" aria-haspopup="true" aria-expanded="false">Super Deals</a> --}}
 
 <!-- Home - Mega Menu -->
-<div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="homeMegaMenu">
+{{-- <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="homeMegaMenu">
 <div class="row u-header__mega-menu-wrapper">
 <div class="col-md-3">
 <span class="u-header__sub-menu-title">Home & Static Pages</span>
@@ -1284,27 +1291,27 @@ data-position="left">
 </ul>
 </div>
 </div>
-</div>
+</div> --}}
 <!-- End Home - Mega Menu -->
 </li>
 <!-- End Home -->
 
 <!-- Featured Brands -->
-<li class="nav-item u-header__nav-item">
+{{-- <li class="nav-item u-header__nav-item">
 <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Featured Brands</a>
-</li>
+</li> --}}
 <!-- End Featured Brands -->
 
 <!-- Trending Styles -->
-<li class="nav-item u-header__nav-item">
+{{-- <li class="nav-item u-header__nav-item">
 <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">Trending Styles</a>
-</li>
+</li> --}}
 <!-- End Trending Styles -->
 
 <!-- Gift Cards -->
-<li class="nav-item u-header__nav-item">
+{{-- <li class="nav-item u-header__nav-item">
 <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true" aria-expanded="false">Gift Cards</a>
-</li>
+</li> --}}
 <!-- End Gift Cards -->
 
 <!-- Button -->
@@ -1776,7 +1783,7 @@ src="{{ asset($ads->adsimages->display_photo_1) }}" alt="Image Description"></a>
 <li class="nav-item flex-shrink-0 flex-md-shrink-1">
 <a class="text-gray-90 btn btn-outline-primary border-width-2 rounded-pill py-1 px-4 font-size-15 text-lh-19 font-size-15-md" href="#">Top 20</a>
 </li>
-<li class="nav-item flex-shrink-0 flex-md-shrink-1">
+{{-- <li class="nav-item flex-shrink-0 flex-md-shrink-1">
 <a class="nav-link text-gray-8" href="#">Phones & Tablets</a>
 </li>
 <li class="nav-item flex-shrink-0 flex-md-shrink-1">
@@ -1784,7 +1791,7 @@ src="{{ asset($ads->adsimages->display_photo_1) }}" alt="Image Description"></a>
 </li>
 <li class="nav-item flex-shrink-0 flex-md-shrink-1">
 <a class="nav-link text-gray-8" href="#"> Video Cameras</a>
-</li>
+</li> --}}
 </ul>
 </div>
 <div class="js-slick-carousel u-slick u-slick--gutters-2 overflow-hidden u-slick-overflow-visble pt-3 pb-6"
@@ -2616,13 +2623,13 @@ data-hide-effect="slideOutDown">
 </a>
 <!-- End Go to Top -->
 
- JS Global Compulsory 
+ {{-- JS Global Compulsory  --}}
 <script src="{{asset('/user/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/popper.js/dist/umd/popper.min.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/bootstrap/bootstrap.min.js')}}"></script>
 
- JS Implementing Plugins 
+ {{-- JS Implementing Plugins  --}}
 <script src="{{asset('/user/assets/vendor/appear.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/jquery.countdown.min.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/hs-megamenu/src/hs.megamenu.js')}}"></script>
@@ -2634,7 +2641,7 @@ data-hide-effect="slideOutDown">
 <script src="{{asset('/user/assets/vendor/slick-carousel/slick/slick.js')}}"></script>
 <script src="{{asset('/user/assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
 
- JS Electro 
+ 
 <script src="{{asset('/user/assets/js/hs.core.js')}}"></script>
 <script src="{{asset('/user/assets/js/components/hs.countdown.js')}}"></script>
 <script src="{{asset('/user/assets/js/components/hs.header.js')}}"></script>
@@ -2651,7 +2658,7 @@ data-hide-effect="slideOutDown">
 <script src="{{asset('/user/assets/js/components/hs.go-to.js')}}"></script>
 <script src="{{asset('/user/assets/js/components/hs.selectpicker.js')}}"></script>
 
- JS Plugins Init. 
+ {{-- JS Plugins Init.  --}}
 <script>
 $(window).on('load', function () {
 // initialization of HSMegaMenu component

@@ -14,14 +14,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
-  <form method="post"  class="form-horizontal m-t-20" action="{{ route('idcardback') }}" id="back" enctype="multipart/form-data">  
-            @csrf
                     You are logged in!
                     <h3>{{ auth()->user()->name }}</h3>
                     <hr>
                     <h4>{{ auth()->user()->email }}</h4>
                     <hr>
                     <h4>{{ auth()->user()->phone }}</h4>
+                    <hr>
+                    <h3>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                    @csrf
+                                    <button type="submit" class="btn btn-secondary">Logout</button>
+                                </form>
+                                
+                            </a>
+                    </h3>
                 </div>
             </div>
         </div>

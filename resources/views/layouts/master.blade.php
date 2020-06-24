@@ -9,7 +9,10 @@
 <!-- Required Meta Tags Always Come First -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
 
+ <!--CSS Implementing Plugins -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <!-- Favicon -->
 <link rel="shortcut icon" href="../../favicon.png">
 
@@ -35,84 +38,87 @@
 
 <!-- ========== HEADER ========== -->
 <header id="header" class="u-header u-header-left-aligned-nav">
-<div class="u-header__section">
-<!-- Topbar -->
-<div class="u-header-topbar py-2 d-none d-xl-block">
-<div class="container">
-<div class="d-flex align-items-center">
-<div class="topbar-left">
-<a href="#" class="text-gray-110 font-size-13 u-header-topbar__nav-link">Welcome to Nigeria number one online  Store</a>
-</div>
-<div class="topbar-right ml-auto">
-<ul class="list-inline mb-0">
-{{-- <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-<a href="#" class="u-header-topbar__nav-link"><i class="ec ec-map-pointer mr-1"></i> Profile</a>
-</li> --}}
-<li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-<a href="/my-orders" class="u-header-topbar__nav-link"><i class="ec ec-transport mr-1"></i> Track Your Order</a>
-</li>
-<li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
-<div class="d-flex align-items-center">
-<!-- Language -->
-<div class="position-relative">
-<a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal" href="javascript:;" role="button"
-aria-controls="languageDropdown"
-aria-haspopup="true"
-aria-expanded="false"
-data-unfold-event="hover"
-data-unfold-target="#languageDropdown"
-data-unfold-type="css-animation"
-data-unfold-duration="300"
-data-unfold-delay="300"
-data-unfold-hide-on-scroll="true"
-data-unfold-animation-in="slideInUp"
-data-unfold-animation-out="fadeOut">
-<span class="d-inline-block d-sm-none">NGA</span>
-<span class="d-none d-sm-inline-flex align-items-center"> NARIA (₦)</span>
-</a>
-
-{{-- <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
-<a class="dropdown-item active" href="#">English</a>
-<a class="dropdown-item" href="#">Deutsch</a>
-<a class="dropdown-item" href="#">Español‎</a>
-</div> --}}
-</div>
-<!-- End Language -->
-</div>
-</li>
-<li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-<!-- Account Sidebar Toggle Button -->
-@guest
-<a id="sidebarNavToggler" href="javascript:;" role="button" class="u-header-topbar__nav-link"
-aria-controls="sidebarContent"
-aria-haspopup="true"
-aria-expanded="false"
-data-unfold-event="click"
-data-unfold-hide-on-scroll="false"
-data-unfold-target="#sidebarContent"
-data-unfold-type="css-animation"
-data-unfold-animation-in="fadeInRight"
-data-unfold-animation-out="fadeOutRight"
-data-unfold-duration="500">
-
-    
-
-<i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign in
-</a>
-@endguest
-
-@auth
-    <a href="/profile" class="text-dark"> <span class="fa fa-user"></span> Profile</a>
-    
-@endauth
-<!-- End Account Sidebar Toggle Button -->
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<!-- End Topbar -->
+        <div class="u-header__section">
+        <!-- Topbar -->
+        <div class="u-header-topbar py-2 d-none d-xl-block">
+        <div class="container">
+        <div class="d-flex align-items-center">
+        <div class="topbar-left">
+        <a href="/register/vendor" class="text-gray-110 font-size-13 hover-on-dark">
+          <span class="fa fa-shopping-cart"></span>   Sell on Gear 5
+        </a>
+        </div>
+        <div class="topbar-right ml-auto">
+        <ul class="list-inline mb-0">
+        {{-- <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+        <a href="/register/vendor" class="u-header-topbar__nav-link"><i class="ec ec-map-pointer mr-1"></i>vendor signup</a>
+        </li> --}}
+        <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+        <a href="/my-orders" class="u-header-topbar__nav-link"><i class="fa fa-truck mr-1"></i> Track Your Order</a>
+        </li>
+        {{-- <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
+        <div class="d-flex align-items-center">
+        <!-- Language -->
+        <div class="position-relative">
+        <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal" href="javascript:;" role="button"
+        aria-controls="languageDropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        data-unfold-event="hover"
+        data-unfold-target="#languageDropdown"
+        data-unfold-type="css-animation"
+        data-unfold-duration="300"
+        data-unfold-delay="300"
+        data-unfold-hide-on-scroll="true"
+        data-unfold-animation-in="slideInUp"
+        data-unfold-animation-out="fadeOut">
+        <span class="d-inline-block d-sm-none">US</span>
+        <span class="d-none d-sm-inline-flex align-items-center"><i class="ec ec-naria mr-1"></i> NARIA (₦)</span>
+        </a>
+        
+        <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
+        {{-- <a class="dropdown-item active" href="#">English</a> --}}
+        {{-- <a class="dropdown-item" href="#">Deutsch</a>
+        <a class="dropdown-item" href="#">Español‎</a> 
+        </div>
+        </div>
+        <!-- End Language -->
+        </div>
+        </li> --
+        <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+        <!-- Account Sidebar Toggle Button -->
+        @guest
+        {{-- <a id="" href="/register" role="button" class="u-header-topbar__nav-link"
+        aria-controls="sidebarContent"
+        aria-haspopup="true"
+        aria-expanded="false"
+        data-unfold-event="click"
+        data-unfold-hide-on-scroll="false"
+        data-unfold-target="#sidebarContent"
+        data-unfold-type="css-animation"
+        data-unfold-animation-in="fadeInRight"
+        data-unfold-animation-out="fadeOutRight"
+        data-unfold-duration="500">
+        
+        
+        
+        <i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign in
+        </a> --}}
+        <a href="/register" class="text-dark">| NARIA (₦)</a> 
+        {{-- <a href="/login" class="text-dark">Login</a> --}}
+        
+        
+        {{-- <a href="/profile" class="text-dark"> <span class="fa fa-user"></span> Profile</a> --}}
+        
+        
+        <!-- End Account Sidebar Toggle Button -->
+        </li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- End Topbar -->
 
 <!-- Logo and Menu -->
 <div class="py-2 py-xl-4 bg-primary-down-lg">
@@ -629,8 +635,8 @@ data-unfold-animation-out="fadeOut">
 <!-- End Input -->
 </li>
 <!-- End Search -->
-<li class="col d-none d-xl-block"><a href="/" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Compare"><i class="font-size-22 ec ec-compare"></i></a></li>
-<li class="col d-none d-xl-block"><a href="/" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li>
+<li class="col d-none d-xl-block"><a href="/login" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Account"><i class="font-size-22 fa fa-user-circle"></i></a></li>
+<li class="col d-none d-xl-block"><a href="/contact" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Question"><i class="font-size-22 fa fa-question-circle"></i></a></li>
 <li class="col d-xl-none px-2 px-sm-3"><a href="/cart" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
 <li class="col pr-xl-0 px-2 px-sm-3">
 <a href="/cart" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
@@ -660,7 +666,7 @@ data-unfold-animation-out="fadeOut">
 <!-- Card -->
 <div class="card border-0 rounded-0">
 <div class="card-header bg-primary rounded-0 card-collapse border-0" id="basicsHeadingOne">
-<button type="button" class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
+{{-- <button type="button" class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
 data-toggle="collapse"
 data-target="#basicsCollapseOne"
 aria-expanded="true"
@@ -669,7 +675,7 @@ aria-controls="basicsCollapseOne">
 <span class="text-gray-90 ml-3">
 <span class="ec ec-arrow-down-search"></span>
 </span>
-</button>
+</button> --}}
 </div>
 <div id="basicsCollapseOne" class="collapse vertical-menu v1"
 aria-labelledby="basicsHeadingOne"
@@ -1050,11 +1056,11 @@ data-style="btn height-40 text-gray-60 font-weight-normal border-0 rounded-0 bg-
 <div class="col-md-auto align-self-center">
 <div class="d-flex">
 <ul class="d-flex list-unstyled mb-0">
-<li class="col"><a href="/" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Compare"><i class="font-size-22 ec ec-compare"></i></a></li>
-<li class="col"><a href="/" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li>
+<li class="col"><a href="/profile" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Account"><i class="font-size-22 ec ec-user"></i></a></li>
+<li class="col"><a href="/contact" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Help"><i class="font-size-22 fa fa-question-circle"></i></a></li>
 <li class="col pr-0">
 <a href="/cart" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
-<i class="font-size-22 ec ec-shopping-bag"></i>
+<i class="font-size-22 fas fa-shopping-cart"></i>
 <span class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">@if(session('cart')) {{ count(session('cart')) }} @else 0   @endif</span>
 {{-- <span class="font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span> --}}
 </a>
@@ -1328,8 +1334,8 @@ data-style="btn height-40 text-gray-60 font-weight-normal border-0 rounded-0 bg-
                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
                     <li><a class="list-group-item list-group-item-action" href="/profile">My Account</a></li>
                     <li><a class="list-group-item list-group-item-action" href="/register/vendor">Sell Now</a></li>
-                    <li><a class="list-group-item list-group-item-action" href="/my-order">My Order</a></li>
-                    <li><a class="list-group-item list-group-item-action" href="terms-and-conditions.html">Terms & Condition</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="/my-orders">My Order</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="terms-and-conditions">Terms & Condition</a></li>
                     <li><a class="list-group-item list-group-item-action" href="/cart">Cart</a></li>
                     <li><a class="list-group-item list-group-item-action" href="/faq">FAQs</a></li>
                     <li><a class="list-group-item list-group-item-action" href="/contact-us">Contact us</a></li>

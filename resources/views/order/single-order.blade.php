@@ -25,10 +25,12 @@
         <hr>
         <h2><img src="{{ asset($order['photo']) }}" alt="" srcset="" height="200" width="200"></h2>
         <hr>
+        @if (auth()->user()->role=='Admin')
         <h3>Buyers Name: {{ $order->buyer->name }}</h3>
         <hr>
         <h3>Buyers phone: {{ $order->buyer->phone }}</h3>
         <hr>
+       
         <h3>Delivery Address: {{ $order->buyer->state }}</h3>
         <h2>Delivery status:  @if ($order->status==0)
                 <label class="badge badge-info">Pending</label> 
@@ -57,6 +59,7 @@
         </form>
 {{-- <button class="btn btn-light">Cancel</button> --}}
 </form>
+@endif
 </div>
 </div>
 </div>

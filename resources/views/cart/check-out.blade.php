@@ -114,8 +114,9 @@
             <!-- End Card -->
         </div>
         <!-- End Accordion -->
-        <form class="js-validate" method="POST" novalidate="novalidate"  action="{{ route('orders.store') }}">
-                @csrf
+        {{-- <form class="js-validate" method="POST" novalidate="novalidate"  action="{{ route('orders.store') }}"> --}}
+<form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+        @csrf           
             <div class="row">
                 <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0">
                     <div class="pl-lg-3 ">
@@ -210,10 +211,28 @@
                                             <th>Total</th>
                                             <td><strong>₦<script>
                                             document.write( total)
+                                           
                                             </script></strong></td>
                                         </tr>
                                     </tfoot>
                                 </table>
+                                
+                                <input type="hidden" name="email" value="{{ auth()->user()->email }}"> required
+                                <input type="hidden" name="orderID" value="{{ rand().time() }}">
+                <input type="hidden" id="amount" name="amount" > {{-- required in kobo --}}
+                                <input type="hidden" name="quantity" value="1">
+                                <input type="hidden" name="currency" value="NGN">
+                                <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
+                                <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                                {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+                    <script>
+                        //document.write(total)
+                        newTotal=total.replace(',','');
+                     document.getElementById("amount").value =newTotal*100;
+                    </script>
+                                 <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
+                    
+                    
                                 <!-- End Product Content -->
                                 <div class="border-top border-width-3 border-color-1 pt-3 mb-3">
                                     <!-- Basics Accordion -->
@@ -221,16 +240,18 @@
                                         <!-- Card -->
                                         <div class="border-bottom border-color-1 border-dotted-bottom">
                                             <div class="p-3" id="basicsHeadingOne">
-                                                <div class="custom-control custom-radio">
+                                                {{-- <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" id="stylishRadio1" name="stylishRadio" checked="">
                                                     <label class="custom-control-label form-label" for="stylishRadio1" data-toggle="collapse" data-target="#basicsCollapseOnee" aria-expanded="true" aria-controls="basicsCollapseOnee">
                                                         Direct bank transfer
                                                     </label>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div id="basicsCollapseOnee" class="collapse show border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion1">
                                                 <div class="p-4">
-                                                    Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                                                    Incases of failed Transactions 
+                                                    use your order ID to send a mail to us at contact@gear5mart.com
+                                                    our system uses paystack payment gateway.
                                                 </div>
                                             </div>
                                         </div>
@@ -239,12 +260,12 @@
                                         <!-- Card -->
                                         <div class="border-bottom border-color-1 border-dotted-bottom">
                                             <div class="p-3" id="basicsHeadingTwo">
-                                                <div class="custom-control custom-radio">
+                                                {{-- <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" id="secondStylishRadio1" name="stylishRadio">
                                                     <label class="custom-control-label form-label" for="secondStylishRadio1" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                         Check payments
                                                     </label>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div id="basicsCollapseTwo" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingTwo" data-parent="#basicsAccordion1">
                                                 <div class="p-4">
@@ -257,17 +278,17 @@
                                         <!-- Card -->
                                         <div class="border-bottom border-color-1 border-dotted-bottom">
                                             <div class="p-3" id="basicsHeadingThree">
-                                                <div class="custom-control custom-radio">
+                                                {{-- <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" id="thirdstylishRadio1" name="stylishRadio">
                                                     <label class="custom-control-label form-label" for="thirdstylishRadio1" data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                         Cash on delivery
                                                     </label>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div id="basicsCollapseThree" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingThree" data-parent="#basicsAccordion1">
-                                                <div class="p-4">
+                                                {{-- <div class="p-4">
                                                     Pay with cash upon delivery.
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                         <!-- End Card -->
@@ -275,12 +296,12 @@
                                         <!-- Card -->
                                         <div class="border-bottom border-color-1 border-dotted-bottom">
                                             <div class="p-3" id="basicsHeadingFour">
-                                                <div class="custom-control custom-radio">
+                                                {{-- <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" id="FourstylishRadio1" name="stylishRadio">
                                                     <label class="custom-control-label form-label" for="FourstylishRadio1" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                         PayPal <a href="#" class="text-blue">What is PayPal?</a>
                                                     </label>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div id="basicsCollapseFour" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion1">
                                                 <div class="p-4">
@@ -453,13 +474,13 @@
                                 </div>
                                 <div class="col-md-6">
                                         <!-- Input -->
-                                        <div class="js-form-message mb-6">
+                                        {{-- <div class="js-form-message mb-6">
                                             <label class="form-label">
                                                     LGA
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="text" class="form-control" name="cityAddress" value="{{ auth()->user()->lga }}" disabled>
-                                        </div>
+                                        </div> --}}
                                         <!-- End Input -->
                                     </div>
         
@@ -471,12 +492,12 @@
                         <div id="shopCartAccordion2" class="accordion rounded mb-6">
                             <!-- Card -->
                             <div class="card border-0">
-                                <div id="shopCartHeadingThree" class="custom-control custom-checkbox d-flex align-items-center">
+                                {{-- <div id="shopCartHeadingThree" class="custom-control custom-checkbox d-flex align-items-center">
                                     <input type="checkbox" class="custom-control-input" id="createAnaccount" name="createAnaccount">
                                     <label class="custom-control-label form-label" for="createAnaccount" data-toggle="collapse" data-target="#shopCartThree" aria-expanded="false" aria-controls="shopCartThree">
                                         Create an account?
                                     </label>
-                                </div>
+                                </div> --}}
                                 <div id="shopCartThree" class="collapse" aria-labelledby="shopCartHeadingThree" data-parent="#shopCartAccordion2" style="">
                                     <!-- Form Group -->
                                     <div class="js-form-message form-group py-5">
@@ -484,7 +505,7 @@
                                             Create account password
                                             <span class="text-danger">*</span>
                                         </label>
-                                        <input type="password" class="form-control" name="password" id="signinSrPasswordExample1" placeholder="********" aria-label="********" required="" data-msg="Enter password." data-error-class="u-has-error" data-success-class="u-has-success">
+                                        {{-- <input type="password" class="form-control" name="password" id="signinSrPasswordExample1" placeholder="********" aria-label="********" required="" data-msg="Enter password." data-error-class="u-has-error" data-success-class="u-has-success"> --}}
                                     </div>
                                     <!-- End Form Group -->
                                 </div>
@@ -517,7 +538,7 @@
                                                     First name
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="text" class="form-control" name="firstName" placeholder="Jack" aria-label="Jack" required="" data-msg="Please enter your frist name." data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off">
+                                                {{-- <input type="text" class="form-control" name="firstName" placeholder="Jack" aria-label="Jack" required="" data-msg="Please enter your frist name." data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off"> --}}
                                             </div>
                                             <!-- End Input -->
                                         </div>
@@ -529,7 +550,7 @@
                                                     Last name
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="text" class="form-control" name="lastName" placeholder="Wayley" aria-label="Wayley" required="" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                                {{-- <input type="text" class="form-control" name="lastName" placeholder="Wayley" aria-label="Wayley" required="" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success"> --}}
                                             </div>
                                             <!-- End Input -->
                                         </div>
@@ -555,7 +576,7 @@
                                                     Street address
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="text" class="form-control" name="streetAddress" placeholder="470 Lucy Forks" aria-label="470 Lucy Forks" required="" data-msg="Please enter a valid address." data-error-class="u-has-error" data-success-class="u-has-success">
+                                                {{-- <input type="text" class="form-control" name="streetAddress" placeholder="470 Lucy Forks" aria-label="470 Lucy Forks" required="" data-msg="Please enter a valid address." data-error-class="u-has-error" data-success-class="u-has-success"> --}}
                                             </div>
                                             <!-- End Input -->
                                         </div>
@@ -578,7 +599,7 @@
                                                     City
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="text" class="form-control" name="cityAddress" placeholder="London" aria-label="London" required="" data-msg="Please enter a valid address." data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off">
+                                                {{-- <input type="text" class="form-control" name="cityAddress" placeholder="London" aria-label="London" required="" data-msg="Please enter a valid address." data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off"> --}}
                                             </div>
                                             <!-- End Input -->
                                         </div>
@@ -590,7 +611,7 @@
                                                     Postcode/Zip
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="text" class="form-control" name="postcode" placeholder="567890" aria-label="99999" required="" data-msg="Please enter a postcode or zip code." data-error-class="u-has-error" data-success-class="u-has-success">
+                                                {{-- <input type="text" class="form-control" name="postcode" placeholder="567890" aria-label="99999" required="" data-msg="Please enter a postcode or zip code." data-error-class="u-has-error" data-success-class="u-has-success"> --}}
                                             </div>
                                             <!-- End Input -->
                                         </div>
@@ -648,14 +669,14 @@
                                                     </select>
                                                   </div>
                                                   <div class="form-group">
-                                                        <label class="control-label">LGA of Delivery</label>
+                                                        {{-- <label class="control-label">LGA of Delivery</label>
                                                         <select
                                                           name="lga"
                                                           id="lga"
                                                           class="form-control select-lga"
                                                           required
                                                         >
-                                                        </select>
+                                                        </select> --}}
                                                       </div>
                                                     </form>
                                             </div>
@@ -666,7 +687,7 @@
                                                     Email address
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="email" class="form-control" name="emailAddress" placeholder="jackwayley@gmail.com" aria-label="jackwayley@gmail.com" required="" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success">
+                                                {{-- <input type="email" class="form-control" name="emailAddress" placeholder="jackwayley@gmail.com" aria-label="jackwayley@gmail.com" required="" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success"> --}}
                                             </div>
                                             <!-- End Input -->
                                         </div>

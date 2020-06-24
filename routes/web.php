@@ -59,11 +59,16 @@ Route::resource('/orders', 'OrderController');
 
 Route::get('/my-orders', 'OrderController@myorder')->middleware('auth');
 
+Route::get('/vendor/{id}', 'user\ProductController@vendorProducts');
 Route::resource('/categories', 'CategoryController');
 Route::PUT('/updatemyprofile', 'UserController@UpdatePersonaLDetails')->name('UpdatePersonaLDetails');
 Route::get('/register/vendor', function () {
     return view('auth.vendor-register');
 });
+Route::resource('/account', 'VendorWalletController');
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
 
 Route::get('/all-products', 'admin\ProductsController@index')->name('allProducts');
 Route::get('/all-orders', 'admin\ProductsController@Orders')->name('allOrders');

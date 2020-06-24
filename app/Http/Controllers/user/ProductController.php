@@ -33,4 +33,13 @@ $ads=Ads::where('slug',$slug)->firstOrFail();
         return view('product.single',compact('ads'));
     }
 }
+
+public function vendorProducts($id)
+    {
+   // dd($category->category_name);
+    $products=Ads::where('user_id',base64_decode($id))->get();
+    $product=Ads::where('user_id',base64_decode($id))->firstorfail();
+        return view('product.vendor-products',compact('products','product'));
+    }
+
 }

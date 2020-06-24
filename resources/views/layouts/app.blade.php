@@ -134,7 +134,7 @@
             </li>
             @endif
           <li class="nav-item">
-            <a class="nav-link" href="/wallet">
+            <a class="nav-link" href="/account">
               <i class="mdi mdi-cash-multiple menu-icon"></i>
               <span class="menu-title">Wallet</span>
             </a>

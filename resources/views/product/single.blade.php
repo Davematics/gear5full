@@ -92,11 +92,11 @@
                        <br>
                       <b>
                             <li>Delivery Information
-                                    Shipped from Abroad and normally delivered between Tuesday 14 Jul and Wednesday 29 Jul. Please check exact dates in the Checkout page.</li>
+                                    Shipped from outside the country and may be delivered  between {{ $date=date('jS F') }} and {{ date('jS F', strtotime($date.'+ 14 days')) }}. Please check exact dates in the Checkout page.</li>
                       </b>
                       <br>
                       <li>Return Policy
-                            Free return within 15 days for Jumia Mall items and 7 days for other eligible items.</li>
+                            Free return within 10 days for Gear 5 mart items and 5 days for other eligible items.</li>
                    </ul>
                     
                 </div>
@@ -110,11 +110,11 @@
                     </div>
                     <div class="card-body">
                       
-                        <p>Allwinshop88
-
-                                80%Positive Seller Score
-                                
-                                284 Followers</p>
+                        <p> 
+                           Name : {{$ads->Vendor->name  }}
+                           <br>
+                             <a href="/vendor/{{ base64_encode($ads->Vendor->id) }}">More product form this vendor</a> 
+                        </p>
                         
                     </div>
                     <br>

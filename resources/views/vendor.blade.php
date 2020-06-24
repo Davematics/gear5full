@@ -19,7 +19,7 @@
                       <div>
                         <a href="/orders" class="text-dark">
                         <h4 class="mb-2 font-weight-light">Total Order</h4>
-                        <h1 class="mb-0">9,500</h1>
+                        <h1 class="mb-0">{{ count($orders) }}</h1>
                       </a>
                       </div>
                     </div>
@@ -39,7 +39,7 @@
                           <div>
                               <a href="/orders?i=pending" class="text-dark">
                             <h4 class="mb-2 font-weight-light">Pending Order</h4>
-                            <h1 class="mb-0">878</h1>
+                            <h1 class="mb-0">{{ count($pendingOrders) }}</h1>
                               </a>
                           </div>
                         </div>
@@ -59,7 +59,7 @@
                       <div>
                         <a href="/orders?i=delivered" class="text-dark">
                         <h4 class="mb-2 font-weight-light">Delivered Order</h4>
-                        <h1 class="mb-0 d-flex align-items-center"> 97
+                        <h1 class="mb-0 d-flex align-items-center"> {{ count($deliveredOrders) }}
                              {{-- <span class="font-weight-normal text-medium ml-2 text-secondary">+36% last month</span> --}}
                         </h1>
                         </a>
@@ -81,7 +81,7 @@
                       <div>
                         <a href="/ads" class="text-dark">
                         <h4 class="mb-2 font-weight-light">Total Products</h4>
-                        <h1 class="mb-0 d-flex align-items-center">234 
+                        <h1 class="mb-0 d-flex align-items-center">{{ count($ads) }}
                             {{-- <span class="font-weight-normal text-medium ml-2 text-secondary">+36% last month</span> --}}
                         </h1>
                         </a>
